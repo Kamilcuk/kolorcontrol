@@ -60,7 +60,10 @@
         <item row="0" column="1">
          <widget class="QSlider" name="sliderR_B">
           <property name="maximum">
-           <number>99</number>
+           <number>990</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -90,10 +93,16 @@
            <number>1</number>
           </property>
           <property name="maximum">
-           <number>100</number>
+           <number>1000</number>
+          </property>
+          <property name="singleStep">
+           <number>1</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="value">
-           <number>100</number>
+           <number>1000</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -126,10 +135,13 @@
         <item row="2" column="1">
          <widget class="QSlider" name="sliderR_G">
           <property name="minimum">
-           <number>-100</number>
+           <number>-1000</number>
           </property>
           <property name="maximum">
-           <number>70</number>
+           <number>700</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="value">
            <number>0</number>
@@ -148,7 +160,7 @@
            <double>5.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -192,7 +204,10 @@
         <item row="0" column="1">
          <widget class="QSlider" name="sliderG_B">
           <property name="maximum">
-           <number>99</number>
+           <number>990</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -222,26 +237,16 @@
            <number>1</number>
           </property>
           <property name="maximum">
-           <number>100</number>
+           <number>1000</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="value">
-           <number>100</number>
+           <number>1000</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QSpinBox" name="spinG_C">
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>100</number>
-          </property>
-          <property name="value">
-           <number>100</number>
           </property>
          </widget>
         </item>
@@ -258,10 +263,13 @@
         <item row="2" column="1">
          <widget class="QSlider" name="sliderG_G">
           <property name="minimum">
-           <number>-100</number>
+           <number>-1000</number>
           </property>
           <property name="maximum">
-           <number>70</number>
+           <number>700</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="value">
            <number>0</number>
@@ -280,7 +288,20 @@
            <double>5.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QSpinBox" name="spinG_C">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>100</number>
           </property>
          </widget>
         </item>
@@ -294,10 +315,13 @@
         <item row="2" column="1">
          <widget class="QSlider" name="sliderB_G">
           <property name="minimum">
-           <number>-100</number>
+           <number>-1000</number>
           </property>
           <property name="maximum">
-           <number>70</number>
+           <number>700</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="value">
            <number>0</number>
@@ -313,10 +337,13 @@
            <number>1</number>
           </property>
           <property name="maximum">
-           <number>100</number>
+           <number>1000</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="value">
-           <number>100</number>
+           <number>1000</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -343,7 +370,10 @@
         <item row="0" column="1">
          <widget class="QSlider" name="sliderB_B">
           <property name="maximum">
-           <number>99</number>
+           <number>990</number>
+          </property>
+          <property name="pageStep">
+           <number>1</number>
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -379,7 +409,7 @@
            <double>5.000000000000000</double>
           </property>
           <property name="singleStep">
-           <double>0.100000000000000</double>
+           <double>0.010000000000000</double>
           </property>
          </widget>
         </item>
@@ -443,198 +473,5 @@
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>sliderR_B</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinR_B</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>415</x>
-     <y>65</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>482</x>
-     <y>71</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinR_B</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sliderR_B</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>482</x>
-     <y>71</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>415</x>
-     <y>65</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderR_C</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinR_C</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>415</x>
-     <y>103</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>482</x>
-     <y>109</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinR_C</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sliderR_C</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>482</x>
-     <y>109</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>415</x>
-     <y>103</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderG_B</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinG_B</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>415</x>
-     <y>175</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>482</x>
-     <y>181</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinG_B</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sliderG_B</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>482</x>
-     <y>181</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>415</x>
-     <y>175</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderG_C</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinG_C</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>415</x>
-     <y>213</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>482</x>
-     <y>219</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinG_C</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sliderG_C</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>482</x>
-     <y>219</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>415</x>
-     <y>213</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderB_B</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinB_B</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>415</x>
-     <y>285</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>482</x>
-     <y>291</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinB_B</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sliderB_B</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>482</x>
-     <y>291</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>415</x>
-     <y>285</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderB_C</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinB_C</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>415</x>
-     <y>323</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>482</x>
-     <y>329</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spinB_C</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sliderB_C</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>482</x>
-     <y>329</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>415</x>
-     <y>323</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

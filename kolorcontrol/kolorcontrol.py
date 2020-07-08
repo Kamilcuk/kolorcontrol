@@ -14,6 +14,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+from __future__ import print_function
+
 import subprocess
 import math
 
@@ -24,6 +26,11 @@ from PyQt5 import QtCore
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 #from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
+
+import sys
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 try:
     from .ui.main_ui import Ui_MainWindow
@@ -82,6 +89,21 @@ class KCMainWindow(Ui_MainWindow):
         self.sliderB_G.valueChanged['int'].connect(self._spin_gammaexp_updater(self.spinB_G))
         self.spinB_G.valueChanged['double'].connect(self._slider_gammalog_updater(self.sliderB_G))
 
+        self.sliderR_B.valueChanged['int'].connect(self._spin_div10_updater(self.spinR_B))
+        self.spinR_B.valueChanged['int'].connect(self._slider_div10_updater(self.sliderR_B))
+        self.sliderG_B.valueChanged['int'].connect(self._spin_div10_updater(self.spinG_B))
+        self.spinG_B.valueChanged['int'].connect(self._slider_div10_updater(self.sliderG_B))
+        self.sliderB_B.valueChanged['int'].connect(self._spin_div10_updater(self.spinB_B))
+        self.spinB_B.valueChanged['int'].connect(self._slider_div10_updater(self.sliderB_B))
+
+        self.sliderR_C.valueChanged['int'].connect(self._spin_div10_updater(self.spinR_C))
+        self.spinR_C.valueChanged['int'].connect(self._slider_div10_updater(self.sliderR_C))
+        self.sliderG_C.valueChanged['int'].connect(self._spin_div10_updater(self.spinG_C))
+        self.spinG_C.valueChanged['int'].connect(self._slider_div10_updater(self.sliderG_C))
+        self.sliderB_C.valueChanged['int'].connect(self._spin_div10_updater(self.spinB_C))
+        self.spinB_C.valueChanged['int'].connect(self._slider_div10_updater(self.sliderB_C))
+
+
         self.spinR_B.valueChanged['int'].connect(self.do_xcalib)
         self.spinR_C.valueChanged['int'].connect(self.do_xcalib)
         self.spinR_G.valueChanged['double'].connect(self.do_xcalib)
@@ -104,16 +126,29 @@ class KCMainWindow(Ui_MainWindow):
 
         self.resetButton.clicked.connect(self.on_resetButton_clicked)
 
+    def _spin_div10_updater(self, spin):
+       def f(value):
+          if self.spin_updater_enabled:
+             spin.setValue(value/10)
+       return f
+
+    def _slider_div10_updater(self, slider):
+       def f(value):
+          self.spin_updater_enabled = False
+          slider.setValue(value*10)
+          self.spin_updater_enabled = True
+       return f
+
     def _spin_gammaexp_updater(self,  spin):
        def f(gamma):
            if self.spin_updater_enabled:
-               spin.setValue(gammaexp(gamma))
+               spin.setValue(gammaexp(gamma/10))
        return f
 
     def _slider_gammalog_updater(self,  slider):
        def f(gamma):
            self.spin_updater_enabled = False
-           slider.setValue(gammalog(gamma))
+           slider.setValue(gammalog(gamma*10))
            self.spin_updater_enabled = True
        return f
 
